@@ -21,7 +21,7 @@ const Filter = () => {
         <Flex >
             <Box>
                 <Select onChange={handlePrice}>
-                    <option value="both">regular</option>
+                    <option value="both">price</option>
                     <option value="asc">Low to High</option>
                     <option value="desc">High to Low</option>
                 </Select>
@@ -29,7 +29,7 @@ const Filter = () => {
             <Spacer />
             <Box>
                 <Select onChange={handleVerification}>
-                    <option value="both">Both</option>
+                    <option value="both">verification</option>
                     <option value="yes">verified</option>
                     <option value="no">Not Verified</option>
                 </Select>

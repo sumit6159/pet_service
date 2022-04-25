@@ -55,26 +55,24 @@ const Login = () => {
     }, [loggedIn, status, error, navigate , toast])
     
   return (
-    <Container mt={30} boxShadow='xl' p={8}>
+    <Container mt={30} boxShadow='xl' p={8} maxW='container.sm'  bg='teal' color='white'>
         <form onSubmit={handleSubmit}>
             <FormControl>
                 <FormLabel htmlFor='email'>Email address</FormLabel>
-                <Input id='email' type='email' onChange={handleChange} />
+                <Input  bg='white' color='teal' id='email' type='email' onChange={handleChange} />
             </FormControl>
             
             <FormControl>
                 <FormLabel htmlFor='password'>Password</FormLabel>
                 <InputGroup>
-                    <Input id='password' type={show ? 'text' : 'password'}  onChange={handleChange}/>
+                    <Input  bg='white' color='teal' id='password' type='password'  onChange={handleChange}/>
                     <InputRightElement width='4.5rem'>
-                    <Button h='1.75rem' size='sm' onClick={handleClick}>
-                    {show ? 'Hide' : 'Show'}
-                    </Button>
+                   
                     </InputRightElement>
                 </InputGroup>
             </FormControl>
-            <Button mt={4} w='full' type='submit' variant='solid' colorScheme="teal">
-                Submit
+            <Button mt={4} w='full' type='submit' variant='solid' colorScheme="red">
+                Login
             </Button>
         </form>
     </Container>

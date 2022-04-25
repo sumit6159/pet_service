@@ -46,36 +46,36 @@ const Signin = () => {
             document.getElementById('type').value = null
     }
   return (
-    <Container>
+    <Container maxW='container.sm'  bg='teal' color='white'>
         <Stack p={4} boxShadow="lg">
             <form onSubmit={handleSubmit}> 
                 <Stack mt={5} direction={['column', 'row']}>
                     <FormControl>
                         <FormLabel htmlFor='firstName'>Enter first name</FormLabel>
-                        <Input id='firstName' type='text' placeholder='First name' required={true}/>
+                        <Input  bg='white' color='teal' id='firstName' type='text' placeholder='First name' required={true}/>
                     </FormControl> 
                     <FormControl>
                         <FormLabel htmlFor='lastName'>Enter last name</FormLabel>
-                        <Input id='lastName' type='text' placeholder='Last name'  required={true}/>
+                        <Input  bg='white' color='teal' id='lastName' type='text' placeholder='Last name'  required={true}/>
                     </FormControl> 
                 </Stack>
                 <FormControl mt={5}>
                     <FormLabel htmlFor='email'>Enter email</FormLabel>
-                    <Input id='email' type='email' placeholder='E-mail'  required={true}/>
+                    <Input  bg='white' color='teal' id='email' type='email' placeholder='E-mail'  required={true}/>
                 </FormControl> 
                 <FormControl mt={5}>
                     <FormLabel htmlFor='password'>Enter password</FormLabel>
-                    <Input id='password' type='password' placeholder='Password'  required={true}/>
+                    <Input  bg='white' color='teal' id='password' type='password' placeholder='Password'  required={true}/>
                 </FormControl> 
                 <FormControl mt={5}>
                     <FormLabel htmlFor='type'>Category</FormLabel>
-                    <Select id='type' placeholder='Select type'  required={true}>
-                        <option value='house-holder'>Care-taker</option>
+                    <Select id='type' placeholder='Select type' bg='white' color='teal' required={true}>
+                        <option  value='house-holder'>pet-care</option>
                         <option value='user'>User</option>
                     </Select>
                 </FormControl>
-                <Button type='submit' w="full" mt={4} variant='solid' colorScheme="teal" p={4}>
-                    Submit
+                <Button type='submit' w="full" mt={4} variant='solid' colorScheme="red" p={4}>
+                    Sign in
                 </Button>
             </form>
         </Stack>

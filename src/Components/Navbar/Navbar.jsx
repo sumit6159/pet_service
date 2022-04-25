@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
 import { apiCallLoggedOut } from '../../Redux/Login/Action'
 import { useNavigate } from 'react-router-dom'
-import MobileDrawer from './MobileDrawer'
+
 const Navbar = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -25,9 +25,11 @@ const Navbar = () => {
     w="full"
     position="sticky"
     fontSize={21}
+    bg='teal'
+    color='white'
     >
         <Box>
-            <Text ml={5} fontWeight="500">
+            <Text ml={5} fontWeight="700">
                Pet-service-app
             </Text>
         </Box>
@@ -37,8 +39,8 @@ const Navbar = () => {
             display={{base : 'flex',lg : "flex", md : "none", sm : 'none'}}
         >
             <Link to='/'>
-                <Button mr={3} variant="ghost"
-                    colorScheme="teal"
+                <Button mr={3} variant="outline"
+                    colorScheme="white"
                 >
                     Home
                 </Button>
@@ -46,25 +48,25 @@ const Navbar = () => {
             {
                 !loggedIn ?
                 <Link to='/signin'>
-                <Button mr={3} variant="ghost"
-                    colorScheme="teal"
+                <Button mr={3} variant="outline"
+                    colorScheme="white"
                 >
-                    Sign in
+                    Sign up
                 </Button>
                 </Link> : null
             }
             {
                 !loggedIn ? 
                 <Link to='/login'>
-                <Button mr={3} variant="ghost"
-                    colorScheme="teal"
+                <Button mr={3} variant="outline"
+                    colorScheme="white"
                 >
                     Login
                 </Button>
                 </Link> :
                 <Button
-                mr={3} variant="ghost"
-                colorScheme="teal"
+                mr={3} variant="outline"
+                colorScheme="white"
                 onClick={()=>{
                     dispatch(apiCallLoggedOut())
                     navigate('/')
@@ -76,19 +78,15 @@ const Navbar = () => {
             {
                 auth === 'Permission granted for all' || auth === 'Permission granted for add house' ?
                 <Link to='/listing/create'>
-                <Button mr={3} variant="ghost"
-                    colorScheme="teal"
+                <Button mr={3} variant="outline"
+                    colorScheme="white"
                 >
                     Add House
                 </Button>
                 </Link> : null
             }
         </Box>
-        <Box
-            display={{base : 'none',lg : "none", md : "flex", sm : 'flex'}}
-        >
-            <MobileDrawer />
-        </Box>
+       
     </Flex>
     )
 }

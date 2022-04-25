@@ -29,20 +29,20 @@ const Main = () => {
       <Spinner size='xl' thickness='5px'
       speed='0.65s'
       emptyColor='gray.200'
-      color='blue.500'/>
+      color='#262626'/>
     </Container>
   }
   return (
     <Stack p={4} w="100%" >
         <Filter />
         <TableContainer>
-          <Table> 
+          <Table variant='striped' colorScheme='teal'> 
             <Thead>
               <Tr>
                 <Th>
                   id
                 </Th>
-                <Th>Image</Th>
+                {/* <Th>Image</Th> */}
                 <Th>Name</Th>
                 <Th>City</Th>
                 <Th maxW="sm">Address</Th>
@@ -50,7 +50,7 @@ const Main = () => {
                 <Th>Cost per day</Th>
                 <Th>verified</Th>
                 <Th>Rating</Th>
-                <Th>More Details</Th>
+                <Th>About</Th>
               </Tr>
             </Thead>
             <Tbody>
@@ -58,9 +58,9 @@ const Main = () => {
                 address.map((item, index)=>{
                   return <Tr key={item._id}>
                       <Td>{index+1}</Td>
-                      <Td>
+                      {/* <Td>
                         <Img src={item.houseUrl} alt="message" />
-                      </Td>
+                      </Td> */}
                       <Td>{item.userId.firstName}</Td>
                       <Td>{item.city}</Td>
                       <Td maxW="sm" overflowX="hidden" >{item.address}</Td>
@@ -72,8 +72,8 @@ const Main = () => {
                       <Td>{item.rating}</Td>
                       <Td>
                         <Link to={`/listing/${item.userId._id}`}>
-                          <Button variant="ghost" colorScheme='teal' rightIcon={<CgDetailsMore />}>
-                            more
+                          <Button variant="ghost" colorScheme='teal' >
+                            look into
                           </Button>
                         </Link>
                       </Td>
